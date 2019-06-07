@@ -1,0 +1,38 @@
+2 merchant1   "Tesco"                       tag1  "Food"
+2 merchant2   "Sainsburys"                  tag1  "Food"
+2 merchant3   "Mortgages-R-Us"              tag4  "Mortgage"
+1 merchant4   "British Airways"             tag5  "Holiday"
+2 merchant5   "Octopus Energy"              tag3  "Bills"
+1 merchant6   "Co-op"                       tag1  "Food"
+2 merchant7   "Mortgage Insurance Co."      tag4  "Mortgage"
+2 merchant8   "Water Co."                   tag3  "Bills"
+1 merchant9   "Sun-screen Superstore"       tag5  "Holiday"
+1 merchant10  "Holiday-Lets-From-Heaven"    tag5  "Holiday"
+3 merchant11  "Local Pub"                   tag6  "Leisure"
+5 merchant12  "Tommy's TakeAway"            tag1  "Food"
+2 merchant13  "Other pub where not barred"  tag6  "Leisure"
+2 merchant14  "Gym"                         tag6  "Leisure"
+2 merchant15  "Lothian Buses"               tag2  "Travel"
+
+tag1  "Food"
+tag2  "Travel"
+tag3  "Bills"
+tag4  "Mortgage"
+tag5  "Holiday"
+tag6  "Leisure"
+
+merchant1   tag1
+merchant2   tag1
+merchant3   tag4
+merchant4   tag5
+merchant5   tag3
+merchant6   tag1
+merchant7   tag4
+merchant8   tag3
+merchant9   tag5
+merchant10  tag5
+merchant11  tag6
+merchant12  tag1
+merchant13  tag6
+merchant14  tag6
+merchant15  tag2
