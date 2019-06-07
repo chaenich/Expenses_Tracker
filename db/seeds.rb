@@ -54,20 +54,21 @@ merchant15 = Merchant.new({
   "merchant_name" => "Lothian Buses"
 })
 
-merchant1.save
-merchant2.save
-merchant3.save
-merchant4.save
-merchant5.save
-merchant7.save
-merchant8.save
-merchant9.save
-merchant10.save
-merchant11.save
-merchant12.save
-merchant13.save
-merchant14.save
-merchant15.save
+merchant1.save()
+merchant2.save()
+merchant3.save()
+merchant4.save()
+merchant5.save()
+merchant6.save()
+merchant7.save()
+merchant8.save()
+merchant9.save()
+merchant10.save()
+merchant11.save()
+merchant12.save()
+merchant13.save()
+merchant14.save()
+merchant15.save()
 
 # Tag setup ---------------------------------
 tag1 = Tag.new({
