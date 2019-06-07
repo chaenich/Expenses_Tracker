@@ -1,0 +1,20 @@
+DROP TABLE IF EXISTS transactions;
+DROP TABLE IF EXISTS merchants;
+DROP TABLE IF EXISTS tags;
+
+CREATE TABLE merchants (
+  id SERIAL4 PRIMARY KEY,
+  merchant_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tags (
+  id SERIAL4 PRIMARY KEY,
+  tag_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE transactions (
+  id SERIAL4 PRIMARY KEY,
+  amount INT4 NOT NULL,
+  merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE,
+  tag_id INT4 REFERENCES tags(id) ON DELETE CASCADE
+);
