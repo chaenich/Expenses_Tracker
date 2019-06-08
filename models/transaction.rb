@@ -1,4 +1,5 @@
 require_relative( '../db/sql_runner' )
+require('pry')
 
 class Transaction
 
@@ -68,5 +69,12 @@ class Transaction
     transactions = transactions_data.map { |transaction| Transaction.new( transaction )}
     return transactions
   end
+
+  def self.all_transactions_total()
+    sql = "SELECT SUM(amount)
+      FROM transactions"
+      result = SqlRunner.run( sql ).first
+      return result["sum"].to_i
+    end
 
 end
