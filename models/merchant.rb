@@ -64,5 +64,4 @@ class Merchant
     return merchants
   end
 
-
 end
