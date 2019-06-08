@@ -77,4 +77,12 @@ class Transaction
       return result["sum"].to_i
     end
 
+  def self.all_transactions_detail
+    sql = "SELECT tr.amount, m.merchant_name, t.tag_name
+      FROM transactions tr, merchants m, tags t
+      WHERE m.id = tr.merchant_id AND
+      tr.tag_id = t.id"
+  end
+
+
 end
