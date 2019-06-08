@@ -77,12 +77,13 @@ class Transaction
       return result["sum"].to_i
     end
 
-  def self.all_transactions_detail
-    sql = "SELECT tr.amount, m.merchant_name, t.tag_name
+  def self.all_transactions_detail()
+    sql = "SELECT m.merchant_name, tr.amount, t.tag_name
       FROM transactions tr, merchants m, tags t
       WHERE m.id = tr.merchant_id AND
       tr.tag_id = t.id"
+    transactions_data = SqlRunner.run( sql )
+    transactions = transactions_data.map { |transaction| transaction }
+    return transactions
   end
-
-
 end
