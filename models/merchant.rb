@@ -68,9 +68,21 @@ class Merchant
     sql = "SELECT SUM(amount)
       FROM transactions
       WHERE merchant_id = $1"
-      values =[id]
-      result = SqlRunner.run( sql, values ).first
-      return result["sum"].to_i
-    end
+    values =[id]
+    result = SqlRunner.run( sql, values ).first
+    return result["sum"].to_i
+  end
+
+  def self.transactions_detail(id)
+    sql = "SELECT m.merchant_name, tr.amount, t.tag_name
+      FROM merchants m, transactions tr, tags t
+      WHERE m.id = tr.merchant_id AND
+      tr.tag_id = t.id AND
+      m.id = $1"
+    values = [id]
+    merch_transactions_data = SqlRunner.run( sql, values )
+    merch_transactions = merch_transactions_data.map{ |merch_transaction|  merch_transaction }
+    return merch_transactions
+  end
 
 end
