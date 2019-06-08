@@ -67,20 +67,20 @@ class Tag
     sql = "SELECT SUM(amount)
       FROM transactions
       WHERE tag_id = $1"
-      values = [id]
-      result = SqlRunner.run( sql, values ).first
-      return result["sum"].to_i
-    end
+    values = [id]
+    result = SqlRunner.run( sql, values ).first
+    return result["sum"].to_i
+  end
 
-    def self.transactions_detail(id)
-      sql = "SELECT tr.amount, t.tag_name, m.merchant_name
-        FROM transactions tr, tags t, merchants m
-        WHERE t.id = tr.tag_id and
-        tr.merchant_id = m.id and t.id = $1"
-      values = [id]
-      tag_transactions_data = SqlRunner.run( sql, values )
-      tag_transactions = tag_transactions_data.map { |tag_transaction| tag_transaction }
-      return tag_transactions
-    end
+  def self.transactions_detail(id)
+    sql = "SELECT tr.amount, t.tag_name, m.merchant_name
+      FROM transactions tr, tags t, merchants m
+      WHERE t.id = tr.tag_id and
+      tr.merchant_id = m.id and t.id = $1"
+    values = [id]
+    tag_transactions_data = SqlRunner.run( sql, values )
+    tag_transactions = tag_transactions_data.map {|tag_transaction| tag_transaction }
+    return tag_transactions
+  end
 
 end
