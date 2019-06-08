@@ -73,8 +73,8 @@ class Tag
   end
 
   def self.transactions_detail(id)
-    sql = "SELECT tr.amount, t.tag_name, m.merchant_name
-      FROM transactions tr, tags t, merchants m
+    sql = "SELECT t.tag_name, tr.amount, m.merchant_name
+      FROM tags t, transactions tr, merchants m
       WHERE t.id = tr.tag_id and
       tr.merchant_id = m.id and t.id = $1"
     values = [id]
