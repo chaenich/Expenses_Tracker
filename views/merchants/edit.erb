@@ -1,0 +1,12 @@
+<h1>Edit Merchant</h1>
+<p></p>
+<form method="post" action="/manage/merchants/<%= @merchant.id %>">
+  <label for="merchant-name-field">Merchant Name:</label>
+  <input
+  type="text"
+  name="merchant_name"
+  id="merchant-name-field"
+  value="<%= @merchant.merchant_name %>"
+  />
+  <input type='submit' value="Confirm Edit">
+</form>

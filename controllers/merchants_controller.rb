@@ -25,3 +25,14 @@ post '/manage/merchants/:id/delete' do # delete / destroy
   merchant.delete()
   redirect to '/manage/merchants'
 end
+
+get '/manage/merchants/:id/edit' do # edit - update part1
+  @merchant = Merchant.find( params[:id] )
+  erb( :"merchants/edit" )
+end
+
+post '/manage/merchants/:id' do # update - update part2
+  @merchant = Merchant.new( params )
+  @merchant.update
+  redirect to '/manage/merchants'
+end
