@@ -8,6 +8,5 @@ get '/explore/transactions' do
   @title = "GoGo Banking - Explore - Transactions"
   @transactions = Transaction.all_transactions_detail()
   @total_spent =  Transaction.all_transactions_total()
-binding.pry
   erb( :"transactions/index" )
 end
