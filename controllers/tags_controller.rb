@@ -25,3 +25,14 @@ post '/manage/tags/:id/delete' do # delete / destroy
   tag.delete()
   redirect to '/manage/tags'
 end
+
+get '/manage/tags/:id/edit' do # edit - update part1
+  @tag = Tag.find( params[:id] )
+  erb( :"tags/edit" )
+end
+
+post '/manage/tags/:id' do # update - update part2
+  @tag = Tag.new( params )
+  @tag.update
+  redirect to '/manage/tags'
+end
