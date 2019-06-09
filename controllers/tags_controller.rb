@@ -9,3 +9,9 @@ get '/manage/tags' do
   @tags = Tag.all()
   erb( :"tags/index" )
 end
+
+post '/manage/tags/:id/delete' do
+  tag = Tag.find( params[:id] )
+  tag.delete()
+  redirect to '/manage/tags'
+end
