@@ -1,0 +1,37 @@
+<h1>Manage Merchants</h1>
+<p></p>
+<nav>
+  <ul>
+    <li>
+      <a href="/manage/transactions">Manage Transactions</a>
+    </li>
+    <li>
+      <a href="/manage/tags">Manage Tags</a>
+    </li>
+  </ul>
+</nav>
+<p></p>
+<p></p>
+<a href="/manage/merchants/new">Create New Merchant</a><table>
+<p></p>
+<p>NOTE: Deleting a merchant will delete all associated transactions. If this is not desired, please use 'Manage Transactions' to change these associations</p>
+<table>
+  <tr>
+    <th>Merchants</th>
+  </tr>
+  <% for merchant in @merchants %>
+  <tr>
+    <td><%= merchant.merchant_name %></td>
+    <td><a href="/manage/merchants/<%= merchant.id %>/edit">Edit Merchant</a></td>
+    <td><form method="post" action="/manage/merchants/<%= merchant.id %>/delete">
+      <input type="submit" value="Delete Merchant"/>
+    </form></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<p></p>
+<nav>
+  <a href="/">Home</a>
+</nav>
