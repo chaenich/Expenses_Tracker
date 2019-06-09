@@ -7,7 +7,7 @@ also_reload( './models/*' )
 
 get '/' do
   @title = "Go_Go Banking"
-  @current_balance = Transaction.all_transactions_total()/100
+  @current_balance = Transaction.all_transactions_total()
   erb( :index )
 end
 

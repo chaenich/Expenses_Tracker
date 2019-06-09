@@ -1,6 +1,6 @@
 <h1>Transactions</h1>
 
-<p> Total spend to date: <%= @total_spent %> </p>
+<p> Total spend to date: £<%= sprintf("%.2f",@total_spent.to_f / 100) %> </p>
 
 <table>
   <tr>
@@ -11,7 +11,7 @@
   <% for transaction in @transactions %>
   <tr>
     <td><%= transaction["merchant_name"] %></td>
-    <td><%= transaction["amount"] %></td>
+    <td>£<%= sprintf("%.2f",transaction["amount"].to_f / 100) %></td>
     <td><%= transaction["tag_name"] %></td>
   </tr>
   <% end %>
