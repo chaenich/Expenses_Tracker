@@ -1,0 +1,36 @@
+<h1>Manage Tags</h1>
+<p></p>
+<nav>
+  <ul>
+    <li>
+      <a href="/manage/transactions">Manage Transactions</a>
+    </li>
+    <li>
+      <a href="/manage/merchants">Manage Merchants</a>
+    </li>
+  </ul>
+</nav>
+<p></p>
+<p></p>
+<a href="/manage/tags/new">Create New Tag</a><table>
+<p></p>
+<p>NOTE: Deleting a tag will delete all associated transactions. If this is not desired, please use 'Manage Transactions' to change these associations</p>
+<table>
+  <tr>
+    <th>Tag</th>
+  </tr>
+  <% for tag in @tags %>
+  <tr>
+    <td><%= tag.tag_name %></td>
+    <td><a href="/manage/tags/<%= tag.id %>/edit">Edit Tag</a></td>
+    <td><form method="post" action="/manage/tags/<%= tag.id %>/delete">
+      <input type="submit" value="Delete Tag"/>
+    </form></td>
+  </tr>
+  <% end %>
+</table>
+
+<p></p>
+<nav>
+  <a href="/">Home</a>
+</nav>
