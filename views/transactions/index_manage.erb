@@ -1,0 +1,35 @@
+<h1>Manage Transactions</h1>
+<p></p>
+<nav>
+  <ul>
+    <li>
+      <a href="/manage/merchants">Manage Merchants</a>
+    </li>
+    <li>
+      <a href="/manage/tags">Manage Tags</a>
+    </li>
+  </ul>
+</nav>
+<p></p>
+<p></p>
+<a href="/manage/transactions/new">Create New Transaction</a><table>
+<p></p>
+<table>
+  <tr>
+    <th>Merchant</th>
+    <th>Amount</th>
+    <th>Tag</th>
+  </tr>
+  <% for transaction in @transactions %>
+  <tr>
+    <td><%= transaction["merchant_name"] %></td>
+    <td>£<%= sprintf("%.2f",transaction["amount"].to_f / 100) %></td>
+    <td><%= transaction["tag_name"] %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p></p>
+<nav>
+  <a href="/">Home</a>
+</nav>
