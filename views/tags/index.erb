@@ -15,20 +15,15 @@
 <a href="/manage/tags/new">Create New Tag</a><table>
 <p></p>
 <p>NOTE: Deleting a tag will delete all associated transactions. If this is not desired, please use 'Manage Transactions' to change these associations</p>
-<table>
-  <tr>
-    <th>Tag</th>
-  </tr>
+
+<h1>Tags</h1>
   <% for tag in @tags %>
-  <tr>
-    <td><%= tag.tag_name %></td>
-    <td><a href="/manage/tags/<%= tag.id %>/edit">Edit Tag</a></td>
-    <td><form method="post" action="/manage/tags/<%= tag.id %>/delete">
+    <p><%= tag.tag_name %></p>
+    <a href="/manage/tags/<%= tag.id %>/edit">Edit Tag</a>
+    <form method="post" action="/manage/tags/<%= tag.id %>/delete">
       <input type="submit" value="Delete Tag"/>
-    </form></td>
-  </tr>
+    </form>
   <% end %>
-</table>
 
 <p></p>
 <nav>
