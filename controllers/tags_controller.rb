@@ -11,6 +11,7 @@ get '/manage/tags' do # index - show all
 end
 
 get '/manage/tags/new' do # new - new rec part1
+  @title = "GoGo Banking - New Tag"
   erb( :"tags/new" )
 end
 
@@ -27,6 +28,7 @@ post '/manage/tags/:id/delete' do # delete / destroy
 end
 
 get '/manage/tags/:id/edit' do # edit - update part1
+  @title = "GoGo Banking - Edit Tag"
   @tag = Tag.find( params[:id] )
   erb( :"tags/edit" )
 end

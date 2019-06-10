@@ -11,6 +11,7 @@ get '/manage/merchants' do # index - show all
 end
 
 get '/manage/merchants/new' do # new - new rec part1
+  @title = "GoGo Banking - New Merchant"
   erb( :"merchants/new" )
 end
 
@@ -27,6 +28,7 @@ post '/manage/merchants/:id/delete' do # delete / destroy
 end
 
 get '/manage/merchants/:id/edit' do # edit - update part1
+  @title = "GoGo Banking - Edit Merchant"
   @merchant = Merchant.find( params[:id] )
   erb( :"merchants/edit" )
 end

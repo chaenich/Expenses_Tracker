@@ -24,6 +24,7 @@ post '/manage/transactions/:id/delete' do # delete / destroy
 end
 
 get '/manage/transactions/new' do # new - new rec part1
+  @title = "GoGo Banking - New Transaction"
   @merchants = Merchant.all()
   @tags = Tag.all()
   erb( :"transactions/new" )
@@ -36,6 +37,7 @@ post '/manage/transactions' do # create - new rec part2
 end
 
 get '/manage/transactions/:id/edit' do # edit - update part1
+  @title = "GoGo Banking - Edit Transaction"
   @merchants = Merchant.all()
   @tags = Tag.all()
   @transaction = Transaction.find( params[:id] )
