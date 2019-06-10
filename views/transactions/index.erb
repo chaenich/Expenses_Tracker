@@ -1,8 +1,26 @@
 <h1>Transactions</h1>
 
-<p>Total spend to date: £<%= sprintf("%.2f",@total_spent.to_f / 100) %> </p>
-<p>Item Count:<%= @item_count %></p>
+<div class="form-trans">
+  <label for="merch_select">Filter on Merchant: </label>
+  <select name="merchant_id" id="merch_select">
+    <% @merchants.each do |merchant| %>
+      <option value=<%= merchant.id %>><%= merchant.name %></option>
+    <% end %>
+  </select>
+</div>
 
+<div class="form-trans">
+  <label for="tag_select">Filter on Tag: </label>
+  <select name="tag_id" id="tag_select">
+    <% @tags.each do |tag| %>
+      <option value=<%= tag.id %>><%= tag.name %></option>
+    <% end %>
+  </select>
+</div>
+<p></p>
+<p>Item Count:<%= @item_count %></p>
+<p>Total spend for displayed items: £<%= sprintf("%.2f",@total_spent.to_f / 100) %> </p>
+<p></p>
 <table>
   <tr>
     <th>Merchant</th>
