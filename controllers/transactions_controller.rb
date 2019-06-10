@@ -22,3 +22,15 @@ post '/manage/transactions/:id/delete' do # delete / destroy
   transaction.delete()
   redirect to '/manage/transactions'
 end
+
+get '/manage/transactions/new' do # new - new rec part1
+  @merchants = Merchant.all()
+  @tags = Tag.all()
+  erb( :"transactions/new" )
+end
+
+post '/manage/transactions' do # create - new rec part2
+  @transaction = Transaction.new( params )
+  @transaction.save()
+  redirect to '/manage/transactions'
+end
