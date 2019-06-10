@@ -2,24 +2,24 @@ require_relative( '../db/sql_runner' )
 
 class Tag
 
-  attr_reader( :tag_name, :id )
+  attr_reader( :name, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @tag_name = options['tag_name']
+    @name = options['name']
   end
 
   def save()
     sql = "INSERT INTO tags
     (
-      tag_name
+      name
     )
     VALUES
     (
       $1
     )
     RETURNING id"
-    values = [@tag_name]
+    values = [@name]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -27,9 +27,9 @@ class Tag
   def update()
     sql = "
     UPDATE tags
-      SET tag_name = $1
+      SET name = $1
       WHERE id = $2"
-    values = [@tag_name, @id]
+    values = [@name, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -79,7 +79,7 @@ class Tag
   end
 
   def self.transactions_detail(id)
-    sql = "SELECT t.tag_name, tr.amount, m.merchant_name
+    sql = "SELECT t.name, tr.amount, m.name
       FROM tags t, transactions tr, merchants m
       WHERE t.id = tr.tag_id and
       tr.merchant_id = m.id and t.id = $1"

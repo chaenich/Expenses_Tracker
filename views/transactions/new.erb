@@ -1,4 +1,4 @@
-<h1>Add New Transaction</h1>
+name<h1>Add New Transaction</h1>
 <p></p>
 <form method="post" action="/manage/transactions">
   <label for="amount-field">Amount: </label>
@@ -13,7 +13,7 @@
     <label for="merch_select">Select Merchant: </label>
     <select name="merchant_id" id="merch_select">
       <% @merchants.each do |merchant| %>
-        <option value=<%= merchant.id %>><%= merchant.merchant_name %></option>
+        <option value=<%= merchant.id %>><%= merchant.name %></option>
       <% end %>
     </select>
   </div>
@@ -22,7 +22,7 @@
     <label for="tag_select">Select Tag: </label>
     <select name="tag_id" id="tag_select">
       <% @tags.each do |tag| %>
-        <option value=<%= tag.id %>><%= tag.tag_name %></option>
+        <option value=<%= tag.id %>><%= tag.name %></option>
       <% end %>
     </select>
   </div>

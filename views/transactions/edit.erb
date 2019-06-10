@@ -12,9 +12,9 @@
       <select name="merchant_id" id="merch_select" selected="<%= @transaction.merchant_id  %>">
         <% @merchants.each do |merchant| %>
           <% if merchant.id == @transaction.merchant_id %>
-            <option value=<%= merchant.id %> selected><%= merchant.merchant_name %></option>
+            <option value=<%= merchant.id %> selected><%= merchant.name %></option>
           <% else %>
-            <option value=<%= merchant.id %>><%= merchant.merchant_name %></option>
+            <option value=<%= merchant.id %>><%= merchant.name %></option>
           <% end %>
         <% end %>
       </select>
@@ -25,9 +25,9 @@
       <select name="tag_id" id="tag_select" selected="<%= @transaction.tag_id  %>">
         <% @tags.each do |tag| %>
           <% if tag.id == @transaction.tag_id %>
-            <option value=<%= tag.id %> selected><%= tag.tag_name %></option>
+            <option value=<%= tag.id %> selected><%= tag.name %></option>
           <% else %>
-            <option value=<%= tag.id %>><%= tag.tag_name %></option>
+            <option value=<%= tag.id %>><%= tag.name %></option>
           <% end %>
         <% end %>
       </select>

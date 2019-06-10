@@ -8,12 +8,12 @@ class TestTransaction < Minitest::Test
 
   def setup
     @merchant1 = Merchant.new({
-      "merchant_name" => "Tommy's TakeAway"
+      "name" => "Tommy's TakeAway"
     })
     @merchant1.save()
 
     @tag1 = Tag.new({
-      "tag_name" => "Food"
+      "name" => "Food"
     })
     @tag1.save()
 

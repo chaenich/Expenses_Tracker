@@ -2,25 +2,25 @@ require_relative( '../db/sql_runner' )
 
 class Merchant
 
-  attr_reader( :merchant_name, :id )
+  attr_reader( :name, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @merchant_name = options['merchant_name']
+    @name = options['name']
   end
 
   def save()
 
     sql = "INSERT INTO merchants
     (
-      merchant_name
+      name
     )
     VALUES
     (
       $1
     )
     RETURNING id"
-    values = [@merchant_name]
+    values = [@name]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -28,9 +28,9 @@ class Merchant
   def update()
     sql = "
     UPDATE merchants
-      SET merchant_name = $1
+      SET name = $1
       WHERE id = $2"
-    values = [@merchant_name, @id]
+    values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -80,7 +80,7 @@ def self.count_all()
   end
 
   def self.transactions_detail(id)
-    sql = "SELECT m.merchant_name, tr.amount, t.tag_name
+    sql = "SELECT m.name, tr.amount, t.name
       FROM merchants m, transactions tr, tags t
       WHERE m.id = tr.merchant_id AND
       tr.tag_id = t.id AND

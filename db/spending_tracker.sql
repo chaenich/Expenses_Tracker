@@ -4,12 +4,12 @@ DROP TABLE IF EXISTS tags;
 
 CREATE TABLE merchants (
   id SERIAL4 PRIMARY KEY,
-  merchant_name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE tags (
   id SERIAL4 PRIMARY KEY,
-  tag_name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE transactions (

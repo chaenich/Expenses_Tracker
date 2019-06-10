@@ -17,7 +17,7 @@
 <p>Item Count:<%= @item_count %></p>
 <h1>Merchants</h1>
   <% for merchant in @merchants %>
-    <p><%= merchant.merchant_name %></p>
+    <p><%= merchant.name %></p>
     <a href="/manage/merchants/<%= merchant.id %>/edit">Edit Merchant</a>
     <form method="post" action="/manage/merchants/<%= merchant.id %>/delete">
       <input type="submit" value="Delete Merchant"/>

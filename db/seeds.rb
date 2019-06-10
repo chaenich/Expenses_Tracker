@@ -9,49 +9,49 @@ Tag.delete_all()
 
 # Merchant setup ---------------------------------
 merchant1 = Merchant.new({
-  "merchant_name" => "Tesco"
+  "name" => "Tesco"
 })
 merchant2 = Merchant.new({
-  "merchant_name" => "Sainsburys"
+  "name" => "Sainsburys"
 })
 merchant3 = Merchant.new({
-  "merchant_name" => "Mortgages-R-Us"
+  "name" => "Mortgages-R-Us"
 })
 merchant4 = Merchant.new({
-  "merchant_name" => "British Airways"
+  "name" => "British Airways"
 })
 merchant5 = Merchant.new({
-  "merchant_name" => "Octopus Energy"
+  "name" => "Octopus Energy"
 })
 merchant6 = Merchant.new({
-  "merchant_name" => "Co-op"
+  "name" => "Co-op"
 })
 merchant7 = Merchant.new({
-  "merchant_name" => "Mortgage Insurance Co."
+  "name" => "Mortgage Insurance Co."
 })
 merchant8 = Merchant.new({
-  "merchant_name" => "Water Co."
+  "name" => "Water Co."
 })
 merchant9 = Merchant.new({
-  "merchant_name" => "Sun-screen Superstore"
+  "name" => "Sun-screen Superstore"
 })
 merchant10 = Merchant.new({
-  "merchant_name" => "Holiday-Lets-From-Heaven"
+  "name" => "Holiday-Lets-From-Heaven"
 })
 merchant11 = Merchant.new({
-  "merchant_name" => "Local Pub"
+  "name" => "Local Pub"
 })
 merchant12 = Merchant.new({
-  "merchant_name" => "Tommy's TakeAway"
+  "name" => "Tommy's TakeAway"
 })
 merchant13 = Merchant.new({
-  "merchant_name" => "Other pub where not barred"
+  "name" => "Other pub where not barred"
 })
 merchant14 = Merchant.new({
-  "merchant_name" => "Gym"
+  "name" => "Gym"
 })
 merchant15 = Merchant.new({
-  "merchant_name" => "Lothian Buses"
+  "name" => "Lothian Buses"
 })
 
 merchant1.save()
@@ -72,22 +72,22 @@ merchant15.save()
 
 # Tag setup ---------------------------------
 tag1 = Tag.new({
-  "tag_name" => "Food"
+  "name" => "Food"
 })
 tag2 = Tag.new({
-  "tag_name" => "Travel"
+  "name" => "Travel"
 })
 tag3 = Tag.new({
-  "tag_name" => "Bills"
+  "name" => "Bills"
 })
 tag4 = Tag.new({
-  "tag_name" => "Mortgage"
+  "name" => "Mortgage"
 })
 tag5 = Tag.new({
-  "tag_name" => "Holiday"
+  "name" => "Holiday"
 })
 tag6 = Tag.new({
-  "tag_name" => "Leisure"
+  "name" => "Leisure"
 })
 tag1.save()
 tag2.save()

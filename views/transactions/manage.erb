@@ -22,7 +22,7 @@
   </tr>
   <% for transaction in @transactions %>
   <tr>
-    <td><%= transaction["merchant_name"] %></td>
+    <td><%= transaction["merch_name"] %></td>
     <td>£<%= sprintf("%.2f",transaction["amount"].to_f / 100) %></td>
     <td><%= transaction["tag_name"] %></td>
     <td><a href="/manage/transactions/<%= transaction["trans_id"] %>/edit">Edit Transaction</a></td>
