@@ -8,12 +8,14 @@
     <th>Merchant</th>
     <th>Amount</th>
     <th>Tag</th>
+    <th>Notes</th>
   </tr>
   <% for transaction in @transactions %>
   <tr>
     <td><%= transaction["merch_name"] %></td>
     <td>£<%= sprintf("%.2f",transaction["amount"].to_f / 100) %></td>
     <td><%= transaction["tag_name"] %></td>
+    <td><%= transaction["notes"] %></td>
   </tr>
   <% end %>
 </table>

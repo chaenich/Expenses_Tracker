@@ -3,11 +3,12 @@ require('pry')
 
 class Transaction
 
-  attr_reader( :amount, :merchant_id, :tag_id, :id )
+  attr_reader( :amount, :notes, :merchant_id, :tag_id, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @amount = options['amount'].to_i
+    @notes = options['notes']
     @merchant_id = options['merchant_id'].to_i
     @tag_id = options['tag_id'].to_i
   end
@@ -16,15 +17,16 @@ class Transaction
     sql = "INSERT INTO transactions
     (
       amount,
+      notes,
       merchant_id,
       tag_id
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@amount, @merchant_id, @tag_id]
+    values = [@amount, @notes, @merchant_id, @tag_id]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -32,11 +34,11 @@ class Transaction
   def update()
     sql = "
     UPDATE transactions
-      SET ( amount, merchant_id, tag_id )
+      SET ( amount, notes, merchant_id, tag_id )
       =
-      ( $1, $2, $3 )
-      WHERE id = $4"
-    values = [@amount, @merchant_id, @tag_id, @id]
+      ( $1, $2, $3, $4 )
+      WHERE id = $5"
+    values = [@amount, @notes, @merchant_id, @tag_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -84,7 +86,7 @@ class Transaction
     end
 
   def self.all_transactions_detail()
-    sql = "SELECT m.name as merch_name, m.id as merch_id, tr.amount, tr.id as trans_id, t.name as tag_name, t.id as tag_id
+    sql = "SELECT m.name as merch_name, m.id as merch_id, tr.amount, tr.notes, tr.id as trans_id, t.name as tag_name, t.id as tag_id
       FROM transactions tr, merchants m, tags t
       WHERE m.id = tr.merchant_id AND
       tr.tag_id = t.id"

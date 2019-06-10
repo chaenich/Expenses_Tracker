@@ -100,151 +100,181 @@ tag6.save()
 # transaction amount field is in pence
 transaction1 = Transaction.new({
   "amount" => 1230,
+  "notes" => "Descriptive note no. 1",
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id
 })
 transaction2 = Transaction.new({
   "amount" => 8260,
+  "notes" => "Descriptive note no. 2",
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id
 })
 transaction3 = Transaction.new({
   "amount" => 723,
+  "notes" => "Descriptive note no. 3",
   "merchant_id" => merchant2.id,
   "tag_id" => tag1.id
 })
 transaction4 = Transaction.new({
   "amount" => 1168,
+  "notes" => "Descriptive note no. 4",
   "merchant_id" => merchant2.id,
   "tag_id" => tag1.id
 })
 transaction5 = Transaction.new({
   "amount" => 60000,
+  "notes" => "Descriptive note no. 5",
   "merchant_id" => merchant3.id,
   "tag_id" => tag4.id
 })
 transaction6 = Transaction.new({
   "amount" => 60000,
+  "notes" => "Descriptive note no. 6",
   "merchant_id" => merchant3.id,
   "tag_id" => tag4.id
 })
 transaction7 = Transaction.new({
   "amount" => 95000,
+  "notes" => "Descriptive note no. 7",
   "merchant_id" => merchant4.id,
   "tag_id" => tag5.id
 })
 transaction8 = Transaction.new({
   "amount" => 9000,
+  "notes" => "Descriptive note no. 8",
   "merchant_id" => merchant5.id,
   "tag_id" => tag3.id
 })
 transaction9 = Transaction.new({
   "amount" => 9000,
+  "notes" => "Descriptive note no. 9",
   "merchant_id" => merchant5.id,
   "tag_id" => tag3.id
 })
 transaction10 = Transaction.new({
   "amount" => 2260,
+  "notes" => "Descriptive note no. 10",
   "merchant_id" => merchant6.id,
   "tag_id" => tag1.id
 })
 transaction11 = Transaction.new({
   "amount" => 5200,
+  "notes" => "Descriptive note no. 11",
   "merchant_id" => merchant7.id,
   "tag_id" => tag4.id
 })
 transaction12 = Transaction.new({
   "amount" => 5200,
+  "notes" => "Descriptive note no. 12",
   "merchant_id" => merchant7.id,
   "tag_id" => tag4.id
 })
 transaction13 = Transaction.new({
   "amount" => 3200,
+  "notes" => "Descriptive note no. 13",
   "merchant_id" => merchant8.id,
   "tag_id" => tag3.id
 })
 transaction14 = Transaction.new({
   "amount" => 3200,
+  "notes" => "Descriptive note no. 14",
   "merchant_id" => merchant8.id,
   "tag_id" => tag3.id
 })
 transaction15 = Transaction.new({
   "amount" => 3840,
+  "notes" => "Descriptive note no. 15",
   "merchant_id" => merchant9.id,
   "tag_id" => tag5.id
 })
 transaction16 = Transaction.new({
   "amount" => 67000,
+  "notes" => "Descriptive note no. 16",
   "merchant_id" => merchant10.id,
   "tag_id" => tag5.id
 })
 transaction17 = Transaction.new({
   "amount" => 1220,
+  "notes" => "Descriptive note no. 17",
   "merchant_id" => merchant11.id,
   "tag_id" => tag6.id
 })
 transaction18 = Transaction.new({
   "amount" => 2430,
+  "notes" => "Descriptive note no. 18",
   "merchant_id" => merchant11.id,
   "tag_id" => tag6.id
 })
 transaction19 = Transaction.new({
   "amount" => 740,
+  "notes" => "Descriptive note no. 19",
   "merchant_id" => merchant11.id,
   "tag_id" => tag6.id
 })
 transaction20 = Transaction.new({
   "amount" => 2200,
+  "notes" => "Descriptive note no. 20",
   "merchant_id" => merchant12.id,
   "tag_id" => tag1.id
 })
 transaction21 = Transaction.new({
   "amount" => 1550,
+  "notes" => "Descriptive note no. 21",
   "merchant_id" => merchant12.id,
   "tag_id" => tag1.id
 })
 transaction22 = Transaction.new({
   "amount" => 3370,
+  "notes" => "Descriptive note no. 22",
   "merchant_id" => merchant12.id,
   "tag_id" => tag1.id
 })
 transaction23 = Transaction.new({
   "amount" => 820,
+  "notes" => "Descriptive note no. 23",
   "merchant_id" => merchant12.id,
   "tag_id" => tag1.id
 })
 transaction24 = Transaction.new({
   "amount" => 5478,
+  "notes" => "Descriptive note no. 24",
   "merchant_id" => merchant12.id,
   "tag_id" => tag1.id
 })
 transaction25 = Transaction.new({
   "amount" => 1820,
+  "notes" => "Descriptive note no. 25",
   "merchant_id" => merchant13.id,
   "tag_id" => tag6.id
 })
 transaction26 = Transaction.new({
   "amount" => 2920,
+  "notes" => "Descriptive note no. 26",
   "merchant_id" => merchant13.id,
   "tag_id" => tag6.id
 })
 transaction27 = Transaction.new({
   "amount" => 3500,
+  "notes" => "Descriptive note no. 27",
   "merchant_id" => merchant14.id,
   "tag_id" => tag6.id
 })
 transaction28 = Transaction.new({
   "amount" => 3500,
+  "notes" => "Descriptive note no. 28",
   "merchant_id" => merchant14.id,
   "tag_id" => tag6.id
 })
 transaction29 = Transaction.new({
   "amount" => 170,
+  "notes" => "Descriptive note no. 29",
   "merchant_id" => merchant15.id,
   "tag_id" => tag2.id
 })
 transaction30 = Transaction.new({
   "amount" => 400,
+  "notes" => "Descriptive note no. 30",
   "merchant_id" => merchant15.id,
   "tag_id" => tag2.id
 })

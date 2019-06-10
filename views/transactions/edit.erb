@@ -34,8 +34,13 @@
     </div>
 
     <div class="form-trans">
-        <input type="submit" value="Confirm Edit"/>
-      </div>
+      <label for="notes-fld">Notes: </label>
+      <input type="text" name="notes" id="notes-fld" value="<%= @transaction.notes %>"/>
+    </div>
+
+    <div class="form-trans">
+      <input type="submit" value="Confirm Edit"/>
+    </div>
 
   </div>
 </form>

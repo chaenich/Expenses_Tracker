@@ -19,6 +19,7 @@ class TestTransaction < Minitest::Test
 
     @transaction1 = Transaction.new({
       "amount" => 1230,
+      "notes" => "Test note"
       "merchant_id" => @merchant1.id,
       "tag_id" => @tag1.id
     })

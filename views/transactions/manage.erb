@@ -25,9 +25,10 @@
     <td><%= transaction["merch_name"] %></td>
     <td>£<%= sprintf("%.2f",transaction["amount"].to_f / 100) %></td>
     <td><%= transaction["tag_name"] %></td>
-    <td><a href="/manage/transactions/<%= transaction["trans_id"] %>/edit">Edit Transaction</a></td>
+    <td><%= transaction["notes"] %></td>
+    <td><a href="/manage/transactions/<%= transaction["trans_id"] %>/edit">Edit</a></td>
     <td><form method="post" action="/manage/transactions/<%= transaction["trans_id"] %>/delete">
-        <input type="submit" value="Delete Transaction"/>
+        <input type="submit" value="Delete"/>
     </form></td
   </tr>
   <% end %>
