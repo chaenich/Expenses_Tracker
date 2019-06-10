@@ -53,6 +53,12 @@ class Tag
     return Tag.map_all( tags )
   end
 
+  def self.count_all()
+      sql = "SELECT count(*) FROM tags"
+      result = SqlRunner.run( sql ).first
+      return result["count"].to_i
+    end
+
   def self.delete_all()
     sql = "DELETE FROM tags"
     SqlRunner.run( sql )
