@@ -1,0 +1,41 @@
+<h1>Edit Transaction</h1>
+<form method="post" action="/manage/transactions/<%= @transaction.id %>">
+  <div class="form-wrapper">
+
+    <div class="form-trans">
+      <label for="amount-fld">Amount:</label>
+      <input type="text" name="amount" id="amount-fld" value="<%= @transaction.amount %>"/>
+    </div>
+
+    <div class="form-trans">
+      <label for="merch_select">Select Merchant: </label>
+      <select name="merchant_id" id="merch_select" selected="<%= @transaction.merchant_id  %>">
+        <% @merchants.each do |merchant| %>
+          <% if merchant.id == @transaction.merchant_id %>
+            <option value=<%= merchant.id %> selected><%= merchant.merchant_name %></option>
+          <% else %>
+            <option value=<%= merchant.id %>><%= merchant.merchant_name %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-trans">
+      <label for="tag_select">Select Tag: </label>
+      <select name="tag_id" id="tag_select" selected="<%= @transaction.tag_id  %>">
+        <% @tags.each do |tag| %>
+          <% if tag.id == @transaction.tag_id %>
+            <option value=<%= tag.id %> selected><%= tag.tag_name %></option>
+          <% else %>
+            <option value=<%= tag.id %>><%= tag.tag_name %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-trans">
+        <input type="submit" value="Confirm Edit"/>
+      </div>
+
+  </div>
+</form>
