@@ -2,20 +2,14 @@
 
 <p> Total spend to date: £<%= sprintf("%.2f",@total_spent.to_f / 100) %> </p>
 
-<table>
-  <tr>
-    <th>Merchant</th>
-    <th>Amount</th>
-    <th>Tag</th>
-  </tr>
+<p>Merchant</p>
+<p>Amount</p>
+<p>Tag</p>
   <% for transaction in @transactions %>
-  <tr>
-    <td><%= transaction["merchant_name"] %></td>
-    <td>£<%= sprintf("%.2f",transaction["amount"].to_f / 100) %></td>
-    <td><%= transaction["tag_name"] %></td>
-  </tr>
+    <p><%= transaction["merchant_name"] %></p>
+    £<%= sprintf("%.2f",transaction["amount"].to_f / 100) %>
+    <%= transaction["tag_name"] %>
   <% end %>
-</table>
 
 <p></p>
 <nav>
