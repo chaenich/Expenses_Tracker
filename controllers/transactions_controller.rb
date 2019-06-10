@@ -8,13 +8,13 @@ get '/explore/transactions' do # index - show all - view only
   @title = "GoGo Banking - Explore - Transactions"
   @transactions = Transaction.all_transactions_detail()
   @total_spent =  Transaction.all_transactions_total()
-  erb( :"transactions/index_explore" )
+  erb( :"transactions/index" )
 end
 
 get '/manage/transactions' do # index - show all - manage
   @title = "GoGo Banking - Manage - Transactions"
   @transactions = Transaction.all_transactions_detail()
-  erb( :"transactions/index_manage" )
+  erb( :"transactions/manage" )
 end
 
 post '/manage/transactions/:id/delete' do # delete / destroy
