@@ -4,7 +4,7 @@ require( 'pry' )
 require_relative( '../models/tag.rb' )
 also_reload( '../models/*' )
 
-get '/manage/tags' do # index
+get '/manage/tags' do # index - show all
   @title = "GoGo Banking - Manage - Tags"
   @tags = Tag.all()
   erb( :"tags/index" )
