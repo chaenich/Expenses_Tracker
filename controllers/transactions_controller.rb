@@ -6,6 +6,7 @@ also_reload( '../models/*' )
 
 get '/explore/transactions' do # index - show all - view only
   @title = "GoGo Banking - Explore - Transactions"
+  @item_count = Transaction.count_all()
   @transactions = Transaction.all_transactions_detail()
   @total_spent =  Transaction.all_transactions_total()
   erb( :"transactions/index" )
@@ -13,6 +14,7 @@ end
 
 get '/manage/transactions' do # index - show all - manage
   @title = "GoGo Banking - Manage - Transactions"
+  @item_count = Transaction.count_all()
   @transactions = Transaction.all_transactions_detail()
   erb( :"transactions/manage" )
 end

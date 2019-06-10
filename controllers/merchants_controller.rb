@@ -6,6 +6,7 @@ also_reload( '../models/*' )
 
 get '/manage/merchants' do # index - show all
   @title = "GoGo Banking - Manage - Merchants"
+  @item_count = Merchant.count_all()
   @merchants = Merchant.all()
   erb( :"merchants/index" )
 end

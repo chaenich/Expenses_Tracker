@@ -6,6 +6,7 @@ also_reload( '../models/*' )
 
 get '/manage/tags' do # index - show all
   @title = "GoGo Banking - Manage - Tags"
+  @item_count = Tag.count_all()
   @tags = Tag.all()
   erb( :"tags/index" )
 end
