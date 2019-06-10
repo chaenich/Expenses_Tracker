@@ -54,6 +54,12 @@ class Merchant
     return Merchant.map_all( transactions )
   end
 
+def self.count_all()
+    sql = "SELECT count(*) FROM merchants"
+    result = SqlRunner.run( sql ).first
+    return result["count"].to_i
+  end
+
   def self.delete_all()
     sql = "DELETE FROM merchants"
     SqlRunner.run( sql )
