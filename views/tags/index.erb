@@ -18,9 +18,9 @@
 <h1>Tags</h1>
   <% for tag in @tags %>
     <p><%= tag.name %></p>
-    <a href="/manage/tags/<%= tag.id %>/edit">Edit Tag</a>
+    <a href="/manage/tags/<%= tag.id %>/edit">Edit</a>
     <form method="post" action="/manage/tags/<%= tag.id %>/delete">
-      <input type="submit" value="Delete Tag"/>
+      <input type="submit" value="Delete"/>
     </form>
   <% end %>
 
