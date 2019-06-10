@@ -13,24 +13,19 @@
   <a href="/manage/transactions/new">Create New Transaction</a><table>
   <p></p>
 </nav>
-<table>
-  <tr>
-    <th>Merchant</th>
-    <th>Amount</th>
-    <th>Tag</th>
-  </tr>
+
+<p>Merchant</p>
+<p>Amount</p>
+<p>Tag</p>
   <% for transaction in @transactions %>
-  <tr>
-    <td><%= transaction["merchant_name"] %></td>
-    <td>£<%= sprintf("%.2f",transaction["amount"].to_f / 100) %></td>
-    <td><%= transaction["tag_name"] %></td>
-    <td><a href="/manage/transactions/<%= transaction["trans_id"] %>/edit">Edit Transaction</a></td>
-    <td><form method="post" action="/manage/transactions/<%= transaction["trans_id"] %>/delete">
+    <p><%= transaction["merchant_name"] %></p>
+    £<%= sprintf("%.2f",transaction["amount"].to_f / 100) %>
+    <%= transaction["tag_name"] %></td>
+    <a href="/manage/transactions/<%= transaction["trans_id"] %>/edit">Edit Transaction</a>
+    <form method="post" action="/manage/transactions/<%= transaction["trans_id"] %>/delete">
         <input type="submit" value="Delete Transaction"/>
-    </form></td>
-  </tr>
+    </form>
   <% end %>
-</table>
 
 <p></p>
 <nav>
