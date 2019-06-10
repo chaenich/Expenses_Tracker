@@ -1,15 +1,16 @@
 <h1>Add New Transaction</h1>
 <p></p>
 <form method="post" action="/manage/transactions">
-  <label for="amount-field">Amount (enter in pence):</label>
+  <label for="amount-field">Amount: </label>
   <input
   type="text"
   name="amount"
   id="amount-field"
   />
+  Please enter value in pence
 
   <div class="form-trans">
-    <label for="merch_select">Select Merchant:</label>
+    <label for="merch_select">Select Merchant: </label>
     <select name="merchant_id" id="merch_select">
       <% @merchants.each do |merchant| %>
         <option value=<%= merchant.id %>><%= merchant.merchant_name %></option>
@@ -18,7 +19,7 @@
   </div>
 
   <div class="form-trans">
-    <label for="tag_select">Select Tag:</label>
+    <label for="tag_select">Select Tag: </label>
     <select name="tag_id" id="tag_select">
       <% @tags.each do |tag| %>
         <option value=<%= tag.id %>><%= tag.tag_name %></option>
