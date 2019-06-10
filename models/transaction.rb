@@ -60,6 +60,12 @@ class Transaction
     return Transaction.map_all( transactions )
   end
 
+  def self.count_all()
+      sql = "SELECT count(*) FROM transactions"
+      result = SqlRunner.run( sql ).first
+      return result["count"].to_i
+    end
+
   def self.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run( sql )
