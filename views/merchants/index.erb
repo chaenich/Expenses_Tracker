@@ -22,7 +22,9 @@
   <% for merchant in @merchants %>
   <tr>
     <td><%= merchant.name %></td>
-    <td><a href="/manage/merchants/<%= merchant.id %>/edit">Edit</a></td>
+    <td><form method="get" action="/manage/merchants/<%= merchant.id %>/edit">
+      <input type="submit" value="Edit"/>
+    </form></td>
     <td><form method="post" action="/manage/merchants/<%= merchant.id %>/delete">
       <input type="submit" value="Delete"/>
     </form></td>
