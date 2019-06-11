@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title><%= @title %></title>
+    <link rel="stylesheet" type="text/css" href="/styles/structure.css">
     <h1>GoGo Banking</h1>
-    <h4>Banking on the go!</h4>
+    <h5>Banking on the go!</h5>
   </head>
   <body>
     <section id="content">
     <%= yield %>
     </section>
     <hr>
-    <nav>
+    <nav class = "footer-nav">
       <ul>
         <li>
           <a href="/about">About</a>

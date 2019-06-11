@@ -1,0 +1,23 @@
+h1, h2, h3, h4, h5, h6, p{
+  font-family: arial;
+}
+
+h1, h5 {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  color: darkblue;
+  background-color: lightblue;
+}
+
+h3 {
+  color: darkblue;
+}
+
+h5 {
+  color: lightblue;
+  background-color: darkblue;
+}
