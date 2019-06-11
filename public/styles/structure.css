@@ -21,3 +21,27 @@ h5 {
   color: lightblue;
   background-color: darkblue;
 }
+
+.footer-navbar {
+  color: darkblue;
+  background-color: lightblue;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-navbar a {
+  float: left;
+  display: block;
+  color: darkblue
+  text-align: center;
+  font-weight: bold;
+  padding: 7px 8px;
+  text-decoration: none;
+  font-family: arial;
+  font-size: 16px;
+}
+
+.footer-navbar a:hover {
+  background: darkblue;
+  color: lightblue;
+}
