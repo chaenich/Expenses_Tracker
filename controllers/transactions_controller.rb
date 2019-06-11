@@ -14,25 +14,35 @@ get '/explore/transactions' do # index - show all - view only
   erb( :"transactions/index" )
 end
 
+get '/explore/transactions/filter' do # index - filter - view only
+  @title = "GoGo Banking - Explore - Transactions"
+  if params['merchant_id']
+    # @transactions = Transaction.find_by_merchant_id(merchant)
+    # --> if time to refactor
+    @item_count = Merchant.transactions_count(params['merchant_id'].to_i)
+    @total_spent =  Merchant.transactions_total(params['merchant_id'].to_i)
+    @transactions = Merchant.transactions_detail(params['merchant_id'].to_i)
+  elsif params['tag_id']
+    # @transactions = Transaction.all()
+    # --> if time to refactor
+    @item_count = Tag.transactions_count(params['tag_id'].to_i)
+    @total_spent =  Tag.transactions_total(params['tag_id'].to_i)
+    @transactions = Tag.transactions_detail(params['tag_id'].to_i)
+  else
+    @item_count = Transaction.count_all()
+    @total_spent =  Transaction.all_transactions_total()
+    @transactions = Transaction.all_transactions_detail()
+  end
+  @merchants = Merchant.all()
+  @tags = Tag.all()
+  erb( :"transactions/index" )
+end
+
 get '/manage/transactions' do # index - show all - manage
   @title = "GoGo Banking - Manage - Transactions"
   @item_count = Transaction.count_all()
   @transactions = Transaction.all_transactions_detail()
   erb( :"transactions/manage" )
-end
-
-get '/manage/transactions/filter/:id' do # index - manage - filtered
-  @title = "GoGo Banking - Manage - Filtered Transactions"
-  if params['id']
-    # @transactions = Transaction.find_by_merchant_id(merchant)
-    # --> if time to refactor
-    @transactions = Merchant.transactions_detail(params[:id])
-  else
-    @transactions = Transaction.all_transactions_detail()
-    # @transactions = Transaction.all()
-    # --> if time to refactor
-    erb( :"transactions/manage" )
-  end
 end
 
 post '/manage/transactions/:id/delete' do # delete / destroy
