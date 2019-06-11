@@ -5,14 +5,14 @@ require_relative( '../models/merchant.rb' )
 also_reload( '../models/*' )
 
 get '/manage/merchants' do # index - show all
-  @title = "GoGo Banking - Manage - Merchants"
+  @title = "GGB - Manage Merchants"
   @item_count = Merchant.count_all()
   @merchants = Merchant.all()
   erb( :"merchants/index" )
 end
 
 get '/manage/merchants/new' do # new - new rec part1
-  @title = "GoGo Banking - New Merchant"
+  @title = "GGB - New Merchant"
   erb( :"merchants/new" )
 end
 
@@ -29,7 +29,7 @@ post '/manage/merchants/:id/delete' do # delete / destroy
 end
 
 get '/manage/merchants/:id/edit' do # edit - update part1
-  @title = "GoGo Banking - Edit Merchant"
+  @title = "GGB - Edit Merchant"
   @merchant = Merchant.find( params[:id] )
   erb( :"merchants/edit" )
 end

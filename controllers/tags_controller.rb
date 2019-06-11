@@ -5,14 +5,14 @@ require_relative( '../models/tag.rb' )
 also_reload( '../models/*' )
 
 get '/manage/tags' do # index - show all
-  @title = "GoGo Banking - Manage - Tags"
+  @title = "GGB - Manage Tags"
   @item_count = Tag.count_all()
   @tags = Tag.all()
   erb( :"tags/index" )
 end
 
 get '/manage/tags/new' do # new - new rec part1
-  @title = "GoGo Banking - New Tag"
+  @title = "GGB - New Tag"
   erb( :"tags/new" )
 end
 
@@ -29,7 +29,7 @@ post '/manage/tags/:id/delete' do # delete / destroy
 end
 
 get '/manage/tags/:id/edit' do # edit - update part1
-  @title = "GoGo Banking - Edit Tag"
+  @title = "GGB - Edit Tag"
   @tag = Tag.find( params[:id] )
   erb( :"tags/edit" )
 end

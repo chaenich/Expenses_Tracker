@@ -5,7 +5,7 @@ require_relative( '../models/transaction.rb' )
 also_reload( '../models/*' )
 
 get '/explore/transactions' do # index - show all - view only
-  @title = "GoGo Banking - Explore - Transactions"
+  @title = "GGB - Explore Xactions"
   @item_count = Transaction.count_all()
   @total_spent =  Transaction.all_transactions_total()
   @transactions = Transaction.all_transactions_detail()
@@ -15,7 +15,7 @@ get '/explore/transactions' do # index - show all - view only
 end
 
 get '/explore/transactions/filter' do # index - filter - view only
-  @title = "GoGo Banking - Explore - Transactions"
+  @title = "GGB - Filter Xactions"
   if params['merchant_id']
     # @transactions = Transaction.find_by_merchant_id(merchant)
     # --> if time to refactor
@@ -32,6 +32,7 @@ get '/explore/transactions/filter' do # index - filter - view only
     @item_count = Transaction.count_all()
     @total_spent =  Transaction.all_transactions_total()
     @transactions = Transaction.all_transactions_detail()
+    @title = "GGB - Filter Xactions"
   end
   @merchants = Merchant.all()
   @tags = Tag.all()
@@ -39,7 +40,7 @@ get '/explore/transactions/filter' do # index - filter - view only
 end
 
 get '/manage/transactions' do # index - show all - manage
-  @title = "GoGo Banking - Manage - Transactions"
+  @title = "GGB - Manage Xactions"
   @item_count = Transaction.count_all()
   @transactions = Transaction.all_transactions_detail()
   erb( :"transactions/manage" )
@@ -52,7 +53,7 @@ post '/manage/transactions/:id/delete' do # delete / destroy
 end
 
 get '/manage/transactions/new' do # new - new rec part1
-  @title = "GoGo Banking - New Transaction"
+  @title = "GGB - New Xaction"
   @merchants = Merchant.all()
   @tags = Tag.all()
   erb( :"transactions/new" )
@@ -65,7 +66,7 @@ post '/manage/transactions' do # create - new rec part2
 end
 
 get '/manage/transactions/:id/edit' do # edit - update part1
-  @title = "GoGo Banking - Edit Transaction"
+  @title = "GGB - Edit Xaction"
   @merchants = Merchant.all()
   @tags = Tag.all()
   @transaction = Transaction.find( params[:id] )
