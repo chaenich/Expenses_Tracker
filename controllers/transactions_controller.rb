@@ -23,7 +23,7 @@ get '/explore/transactions/filter' do # index - filter - view only
     @total_spent =  Merchant.transactions_total(params['merchant_id'].to_i)
     @transactions = Merchant.transactions_detail(params['merchant_id'].to_i)
   elsif params['tag_id']
-    # @transactions = Transaction.all()
+    # @transactions = Transaction.find_by_tag_id(tag)
     # --> if time to refactor
     @item_count = Tag.transactions_count(params['tag_id'].to_i)
     @total_spent =  Tag.transactions_total(params['tag_id'].to_i)
@@ -32,7 +32,7 @@ get '/explore/transactions/filter' do # index - filter - view only
     @item_count = Transaction.count_all()
     @total_spent =  Transaction.all_transactions_total()
     @transactions = Transaction.all_transactions_detail()
-    @title = "GGB - Filter Xactions"
+    @title = "GGB - Explore Xactions"
   end
   @merchants = Merchant.all()
   @tags = Tag.all()
