@@ -15,11 +15,17 @@
 <p></p>
 <p>NOTE: Deleting a merchant will delete all associated transactions. If this is not desired, please use 'Manage Transactions' to change these associations</p>
 <p>Item Count:<%= @item_count %></p>
-<h1>Merchants</h1>
+<table>
+  <tr>
+    <th>Merchant</th>
+  </tr>
   <% for merchant in @merchants %>
-    <p><%= merchant.name %></p>
-    <a href="/manage/merchants/<%= merchant.id %>/edit">Edit</a>
-    <form method="post" action="/manage/merchants/<%= merchant.id %>/delete">
+  <tr>
+    <td><%= merchant.name %></td>
+    <td><a href="/manage/merchants/<%= merchant.id %>/edit">Edit</a></td>
+    <td><form method="post" action="/manage/merchants/<%= merchant.id %>/delete">
       <input type="submit" value="Delete"/>
-    </form>
+    </form></td>
+  </tr>
   <% end %>
+</table>
