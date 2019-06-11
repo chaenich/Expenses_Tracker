@@ -22,12 +22,9 @@
   <% for tag in @tags %>
   <tr>
     <td><%= tag.name %></td>
-    <td><a href="/manage/tags/<%= tag.id %>/edit">Edit</a></td>
-
     <td><form method="get" action="/manage/tags/<%= tag.id %>/edit">
       <input type="submit" value="Edit"/>
     </form></td>
-
     <td><form method="post" action="/manage/tags/<%= tag.id %>/delete">
       <input type="submit" value="Delete"/>
     </form></td>
