@@ -1,10 +1,10 @@
 <h1>Transactions</h1>
 
-<div class="form-trans">
+<div class="form-trans">Filter by Merchant OR Tag
   <form method="get" action="/explore/transactions/filter">
-    <label for="merch_select">Filter on Merchant: </label>
+    <label for="merch_select"></label>
     <select name="merchant_id" id="merch_select">
-      <option value="" disabled selected>Please select a merchant!</option>
+      <option value="" disabled selected>Please select a Merchant</option>
       <% @merchants.each do |merchant| %>
         <option value=<%= merchant.id %>><%= merchant.name %></option>
       <% end %>
@@ -12,12 +12,11 @@
     <input type="submit" value="Show filtered data">
   </form>
 </div>
-OR
 <div class="form-trans">
   <form method="get" action="/explore/transactions/filter">
-    <label for="tag_select">Filter on Tag: </label>
+    <label for="tag_select"></label>
     <select name="tag_id" id="tag_select">
-      <option value="" disabled selected>Please select a Tag!</option>
+      <option value="" disabled selected>Please select a Tag</option>
       <% @tags.each do |tag| %>
         <option value=<%= tag.id %>><%= tag.name %></option>
       <% end %>
