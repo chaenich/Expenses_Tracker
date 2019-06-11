@@ -15,11 +15,17 @@
 </nav>
 <p>NOTE: Deleting a tag will delete all associated transactions. If this is not desired, please use 'Manage Transactions' to change these associations</p>
 <p>Item Count:<%= @item_count %></p>
-<h1>Tags</h1>
+<table>
+  <tr>
+    <th>Tag</th>
+  </tr>
   <% for tag in @tags %>
-    <p><%= tag.name %></p>
-    <a href="/manage/tags/<%= tag.id %>/edit">Edit</a>
-    <form method="post" action="/manage/tags/<%= tag.id %>/delete">
+  <tr>
+    <td><%= tag.name %></td>
+    <td><a href="/manage/tags/<%= tag.id %>/edit">Edit</a></td>
+    <td><form method="post" action="/manage/tags/<%= tag.id %>/delete">
       <input type="submit" value="Delete"/>
-    </form>
+    </form></td>
+  </tr>
   <% end %>
+</table
