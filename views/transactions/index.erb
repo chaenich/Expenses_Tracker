@@ -1,17 +1,22 @@
 <h1>Transactions</h1>
 
 <div class="form-trans">
-  <label for="merch_select">Filter on Merchant: </label>
-  <select name="merchant_id" id="merch_select">
-    <% @merchants.each do |merchant| %>
-      <option value=<%= merchant.id %>><%= merchant.name %></option>
-    <% end %>
-  </select>
+  <form method="get" action="/manage/transactions/filter/<%= value %>>d">
+    <label for="merch_select">Filter on Merchant: </label>
+    <select name="merchant_id" id="merch_select">
+      <option value="" disabled selected>Please select a merchant!</option>
+      <% @merchants.each do |merchant| %>
+        <option value=<%= merchant.id %>><%= merchant.name %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Show filtered data">
+  </form>
 </div>
-
+OR
 <div class="form-trans">
   <label for="tag_select">Filter on Tag: </label>
   <select name="tag_id" id="tag_select">
+    <option value="" disabled selected>Please select a Tag!</option>
     <% @tags.each do |tag| %>
       <option value=<%= tag.id %>><%= tag.name %></option>
     <% end %>
@@ -21,6 +26,7 @@
 <p>Item Count:<%= @item_count %></p>
 <p>Total spend for displayed items: £<%= sprintf("%.2f",@total_spent.to_f / 100) %> </p>
 <p></p>
+
 <table>
   <tr>
     <th>Merchant</th>

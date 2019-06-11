@@ -21,6 +21,20 @@ get '/manage/transactions' do # index - show all - manage
   erb( :"transactions/manage" )
 end
 
+get '/manage/transactions/filter/:id' do # index - manage - filtered
+  @title = "GoGo Banking - Manage - Filtered Transactions"
+  if params['id']
+    # @transactions = Transaction.find_by_merchant_id(merchant)
+    # --> if time to refactor
+    @transactions = Merchant.transactions_detail(params[:id])
+  else
+    @transactions = Transaction.all_transactions_detail()
+    # @transactions = Transaction.all()
+    # --> if time to refactor
+    erb( :"transactions/manage" )
+  end
+end
+
 post '/manage/transactions/:id/delete' do # delete / destroy
   transaction = Transaction.find( params[:id] )
   transaction.delete()

@@ -70,6 +70,15 @@ def self.count_all()
     return merchants
   end
 
+  def self.transactions_count(id)
+    sql = "SELECT COUNT(*)
+      FROM transactions
+      WHERE merchant_id = $1"
+    values =[id]
+    result = SqlRunner.run( sql, values ).first
+    return result["count"].to_i
+  end
+
   def self.transactions_total(id)
     sql = "SELECT SUM(amount)
       FROM transactions
@@ -80,7 +89,7 @@ def self.count_all()
   end
 
   def self.transactions_detail(id)
-    sql = "SELECT m.name, tr.amount, t.name
+    sql = "SELECT m.name as merch_name, tr.amount, tr.notes, t.name as tag_name
       FROM merchants m, transactions tr, tags t
       WHERE m.id = tr.merchant_id AND
       tr.tag_id = t.id AND

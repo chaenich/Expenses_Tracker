@@ -69,6 +69,15 @@ class Tag
     return tags
   end
 
+  def self.transactions_count(id)
+    sql = "SELECT COUNT(*)
+      FROM transactions
+      WHERE tag_id = $1"
+    values = [id]
+    result = SqlRunner.run( sql, values ).first
+    return result["count"].to_i
+  end
+
   def self.transactions_total(id)
     sql = "SELECT SUM(amount)
       FROM transactions
@@ -79,7 +88,7 @@ class Tag
   end
 
   def self.transactions_detail(id)
-    sql = "SELECT t.name, tr.amount, m.name
+    sql = "SELECT t.name as tag_name, tr.amount, tr.notes, m.name as merch_name
       FROM tags t, transactions tr, merchants m
       WHERE t.id = tr.tag_id and
       tr.merchant_id = m.id and t.id = $1"
