@@ -1,7 +1,7 @@
 <h1>Transactions</h1>
 
 <div class="form-trans">
-  <form method="get" action="/manage/transactions/filter/<%= value %>>d">
+  <form method="post" action="/manage/transactions/filter/<%= @merchant.id %>>d">
     <label for="merch_select">Filter on Merchant: </label>
     <select name="merchant_id" id="merch_select">
       <option value="" disabled selected>Please select a merchant!</option>
