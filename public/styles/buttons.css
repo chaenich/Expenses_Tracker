@@ -1,12 +1,9 @@
 .btn,
 .btn-danger {
   border-radius: 20px;
-}
-
-.btn,
-.btn-danger {
   color: darkblue;
   background-color: lightblue;
+  font-family: arial;
 }
 
 .btn:hover {
