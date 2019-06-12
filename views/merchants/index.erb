@@ -23,10 +23,10 @@
   <tr>
     <td><%= merchant.name %></td>
     <td><form method="get" action="/manage/merchants/<%= merchant.id %>/edit">
-      <input type="submit" value="Edit"/>
+      <input class="btn" type="submit" value="Edit"/>
     </form></td>
     <td><form method="post" action="/manage/merchants/<%= merchant.id %>/delete">
-      <input type="submit" value="Delete"/>
+      <input class="btn-danger" type="submit" value="Delete"/>
     </form></td>
   </tr>
   <% end %>
