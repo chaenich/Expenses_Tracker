@@ -1,0 +1,11 @@
+table {
+  border: 1px solid lightblue;
+}
+
+td, th {
+  font-family: arial;
+}
+
+td {
+  padding: 5px 20px 0px 0px;
+}
