@@ -11,7 +11,7 @@
   </ul>
   <p></p>
   <form method="get" action="/manage/transactions/new">
-    <input class="btn-new" type="submit" value="Create new Transaction"/>
+    <input class="btn" type="submit" value="Create new Transaction"/>
   </form>
   <p></p>
 </nav>
@@ -34,7 +34,7 @@
       <input class ="btn" type="submit" value="Edit"/>
     </form></td>
     <td><form method="post" action="/manage/transactions/<%= transaction["trans_id"] %>/delete">
-        <input class="btn-danger" type="submit" value="Delete"/>
+        <input class="btn-db-danger" type="submit" value="Delete"/>
     </form></td
   </tr>
   <% end %>

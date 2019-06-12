@@ -1,6 +1,6 @@
 .btn,
-.btn-danger,
-.btn-new {
+.btn-db-danger,
+.btn-db-update {
   border-radius: 20px;
   color: darkblue;
   background-color: lightblue;
@@ -13,19 +13,19 @@
   background-color: darkblue;
 }
 
-.btn-danger:hover {
+.btn-db-danger:hover {
   color: lightblue;
   background-color: red;
 }
 
-.btn-new:hover {
+.btn-db-update:hover {
   color: lightblue;
   background-color: green;
 }
 
 .btn:active,
-.btn-danger:active
-.btn-new:active {
+.btn-db-danger:active,
+.btn-db-update:active {
   position: relative;
   top: 4px;
   bottom: 4px;
