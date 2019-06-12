@@ -1,0 +1,27 @@
+.btn,
+.btn-danger {
+  border-radius: 20px;
+}
+
+.btn,
+.btn-danger {
+  color: darkblue;
+  background-color: lightblue;
+}
+
+.btn:hover {
+  color: lightblue;
+  background-color: darkblue;
+}
+
+.btn-danger:hover {
+  color: lightblue;
+  background-color: red;
+}
+
+.btn:active,
+.btn-danger:active {
+  position: relative;
+  top: 4px;
+  bottom: 4px;
+}
