@@ -21,6 +21,16 @@ h5 {
   color: lightblue;
   background-color: darkblue;
 }
+.sub-nav {
+  font-family: arial;
+  color: darkblue;
+  text-decoration: none;
+}
+
+.sub-nav:hover {
+  color: orange;
+  background-color: darkblue;
+}
 
 .footer-navbar {
   color: darkblue;
