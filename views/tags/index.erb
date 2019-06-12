@@ -10,7 +10,9 @@
     </li>
   </ul>
   <p></p>
-  <a href="/manage/tags/new">Create New Tag</a><table>
+  <form method="get" action="/manage/tags/new">
+    <input class="btn-new" type="submit" value="Create new Tag"/>
+  </form>
   <p></p>
 </nav>
 <p>NOTE: Deleting a tag will delete all associated transactions. If this is not desired, please use 'Manage Transactions' to change these associations</p>
