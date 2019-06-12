@@ -1,9 +1,11 @@
 .btn,
-.btn-danger {
+.btn-danger,
+.btn-new {
   border-radius: 20px;
   color: darkblue;
   background-color: lightblue;
   font-family: arial;
+  outline: none;
 }
 
 .btn:hover {
@@ -16,8 +18,14 @@
   background-color: red;
 }
 
+.btn-new:hover {
+  color: lightblue;
+  background-color: green;
+}
+
 .btn:active,
-.btn-danger:active {
+.btn-danger:active
+.btn-new:active {
   position: relative;
   top: 4px;
   bottom: 4px;
