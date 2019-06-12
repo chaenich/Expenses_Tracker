@@ -21,6 +21,7 @@ h5 {
   color: lightblue;
   background-color: darkblue;
 }
+
 .sub-nav {
   font-family: arial;
   color: darkblue;
@@ -32,6 +33,9 @@ h5 {
   background-color: darkblue;
 }
 
+form {
+  font-family: arial;
+}
 .footer-navbar {
   color: darkblue;
   background-color: lightblue;
