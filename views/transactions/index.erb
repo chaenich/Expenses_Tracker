@@ -1,6 +1,11 @@
 <h3>Transactions</h3>
 
-<div class="form-trans">Filter by Merchant OR Tag
+<table>
+  <tr>
+    <th>Filter by Merchant / Tag</th>
+  </tr>
+<tr>
+<td><div class="form-trans">
   <form method="get" action="/explore/transactions/filter">
     <label for="merch_select"></label>
     <select name="merchant_id" id="merch_select">
@@ -11,8 +16,8 @@
     </select>
     <input class="btn" type="submit" value="Show filtered data">
   </form>
-</div>
-<div class="form-trans">
+</div></td>
+<td><div class="form-trans">
   <form method="get" action="/explore/transactions/filter">
     <label for="tag_select"></label>
     <select name="tag_id" id="tag_select">
@@ -23,13 +28,14 @@
     </select>
     <input class="btn" type="submit" value="Show filtered data">
   </form>
-</div>
-<p></p>
-<p>Item Count:<%= @item_count %></p>
-<p>Total spend for displayed items: £<%= sprintf("%.2f",@total_spent.to_f / 100) %> </p>
+</div></td>
+<td>Item Count:<%= @item_count %></td>
+<td>Total spend for displayed items: £<%= sprintf("%.2f",@total_spent.to_f / 100) %> </td>
+</tr>
+</table
 <p></p>
 
-<table>
+<table class="data-table">
   <tr>
     <th>Merchant</th>
     <th>Amount</th>
